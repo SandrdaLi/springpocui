@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg py-3 header" *ngIf="router.url !== '/profile'">
+    <div class="container d-flex justify-content-between">
+        <div>
+            <h1 class="mb-0 header-title">Stocks Portfolio</h1>
+            <kendo-dropdownlist
+                [data]="listItems"
+                [iconClass]="'k-i-arrow-chevron-down'"
+                [style.width.px]="150"
+                [(value)]="selected"
+                (valueChange)="onCurrencyChange($event)"
+            >
+                <ng-template kendoDropDownListValueTemplate let-dataItem>
+                    Currency in {{ dataItem }}
+                </ng-template>
+            </kendo-dropdownlist>
+        </div>
+    </div>
+</nav>
